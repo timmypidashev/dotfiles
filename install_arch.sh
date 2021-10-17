@@ -23,10 +23,8 @@ fi
 if [ $system -eq 2 ]
 then 
   SYSTEM="LEGACY"
-fi
 
-if [ system -eq * ]
-then
+else
   SYSTEM="UEFI"
 fi
 
