@@ -27,4 +27,5 @@ case $system in
     ;;
 esac
 
-echo $SYSTEM
+echo "Proceeding to install Arch Linux!"
+
