@@ -15,17 +15,16 @@ fi
 echo "1) UEFI System 	2) Legacy System"
 read -r -p "What kind of computer are you running on? (default 1): " system
 
-if [ $system -eq 1 ]
-then 
-  SYSTEM="UEFI"
-fi
-
-if [ $system -eq 2 ]
-then 
-  SYSTEM="LEGACY"
-
-else
-  SYSTEM="UEFI"
-fi
+case $system in 
+[1])
+    SYSTEM="UEFI"
+    ;;
+[2])
+    SYSTEM="LEGACY"
+    ;;
+[*])
+    SYSTEM="UEFI"
+    ;;
+esac
 
 echo $SYSTEM
