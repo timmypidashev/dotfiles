@@ -42,6 +42,10 @@ case $vid in
       ;;
 esac
 
+# installs xorg
+echo "Installing xorg display server and graphics driver..."
+sudo pacman -S --noconfirm --needed xorg $DRI 
+
 # install AUR helper
 echo "We need an AUR helper. It is essential. 1) paru       2) yay"
 read -r -p "What is the AUR helper of your choice? (Default is paru): " num
@@ -57,10 +61,6 @@ then
 	git clone https://aur.archlinux.org/$HELPER.git ~/.srcs/$HELPER
 	(cd ~/.srcs/$HELPER/ && makepkg -si )
 fi
-
-# installs xorg
-echo "Installing xorg display server and graphics driver..."
-sudo pacman -S --noconfirm --needed xorg $DRI 
 
 # installs xmonad
 echo "Installing xmonad..."
