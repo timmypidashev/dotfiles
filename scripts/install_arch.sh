@@ -13,6 +13,9 @@ case $sys in
 [2])
     SYSTEM="LEGACY"
     ;;
+[4])
+    SYSTEM=""
+    ;;
 [*])
     SYSTEM="UEFI"
     ;;
