@@ -89,6 +89,11 @@ cd down-wallset
 
 cd .. && rm -rf down-wallset
 
+# finals
+echo "Compiling xmonad..."
+xmonad --recompile
+
+echo"Please reboot, login, and use startx to boot"
 
 
 
