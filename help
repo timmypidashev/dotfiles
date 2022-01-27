@@ -43,12 +43,14 @@ set softtabstop=4
 " Editor plugin binds, commands, and configurations
 " ----------------------
 
-" fzz(fuzzy finder)
+" fzf(fuzzy finder) " TODO: fix and polish
+" (got a basic config working, but not satisfied)
 " ----------------------
 " Map FZF default to CTRL-f
 nnoremap <silent> <C-f> :FZF<CR>
 
-" ripgrep(grep commands)
+" ripgrep(grep commands) " TODO: fix and polish
+" (don't like current implementation)
 " ----------------------
 " tell vim to use ripgrep instead of default vimgrep
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
