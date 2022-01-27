@@ -15,6 +15,7 @@ Plug 'wakatime/vim-wakatime' " wakatime plugin
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf 
 Plug 'jremmen/vim-ripgrep' " ripgrep plugin
 Plug 'airblade/vim-gitgutter' " gitgutter
+Plug 'dense-analysis/ale' "ale
 call plug#end()
 
 " line numbers
@@ -62,17 +63,46 @@ nnoremap <silent> <Leader>f :Rg<CR>
 
 " gitgutter(git diff column)
 " ----------------------
-"autocmd VimEnter * highlight! clear SignColumn
-" autocmd ColorScheme * highlight! link SignColumn LineNr
 "  Activate gitgutter automatically
 autocmd VimEnter * GitGutterEnable
-autocmd ColorScheme * highlight! link SignColumn LineNr
 
-" remove grey background
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+" set the highlight backgournd to match the colorscheme
+highlight! link SignColumn LineNr
+set background=dark
 
 " Disable gitgutter column highlight
-" autocmd VimeEnter * GitGutterLineHighlightsDisable
+autocmd VimEnter * GitGutterLineHighlightsDisable
 
 " Ensure gitgutter always displays
 let g:gitgutter_max_signs = -1
+
+" ale(asynchronous lint engine)
+" ----------------------
+" define gutter error sign
+let g:ale_sign_error = '●'
+
+" define gutter warning sign
+let g:ale_sign_warning = '!'
+
+" map Ctrl-e to ale_next_wrap(jump to next error)
+nmap <silent> <C-e> <Plug>(ale_next_wrap)
+
+" lint on save
+let g:ale_lint_on_save = 1
+
+" add linter to status line
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors    return l:counts.total == 0 ? 'OK' : printf(
+        \   '%d⨉ %d⚠ ',
+        \   all_non_errors,
+        \   all_errors
+        \)
+endfunction
+set statusline+=%=
+set statusline+=\ %{LinterStatus()}
 
