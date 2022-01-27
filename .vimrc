@@ -14,6 +14,7 @@ call plug#begin()
 Plug 'wakatime/vim-wakatime' " wakatime plugin
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf 
 Plug 'jremmen/vim-ripgrep' " ripgrep plugin
+Plug 'airblade/vim-gitgutter' " gitgutter
 call plug#end()
 
 " line numbers
@@ -58,3 +59,20 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
 
 " Map RG default to f
 nnoremap <silent> <Leader>f :Rg<CR>
+
+" gitgutter(git diff column)
+" ----------------------
+"autocmd VimEnter * highlight! clear SignColumn
+" autocmd ColorScheme * highlight! link SignColumn LineNr
+"  Activate gitgutter automatically
+autocmd VimEnter * GitGutterEnable
+autocmd ColorScheme * highlight! link SignColumn LineNr
+
+" remove grey background
+
+" Disable gitgutter column highlight
+" autocmd VimeEnter * GitGutterLineHighlightsDisable
+
+" Ensure gitgutter always displays
+let g:gitgutter_max_signs = -1
+
