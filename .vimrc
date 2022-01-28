@@ -23,6 +23,16 @@ set softtabstop=4
 " Remove default vim bar
 set noshowmode
 
+" tab keybinds
+nmap <silent> <C-n> :tabnext<CR>
+nmap <silent> <C-p> :tabprev<CR>
+nmap <silent> <C-t> :tabnew<CR>
+nmap <silent> <C-w> :tabclose<CR>
+
+" jump to bottom/top of file
+nmap <silent> <C-u> :1<CR>
+nmap <silent> <C-b> :%<CR>
+
 " vim plug
 " ------------------
 " Install vim-plug if not found
