@@ -47,6 +47,7 @@ Plug 'vim-airline/vim-airline' " airline
 Plug 'vim-airline/vim-airline-themes' " airline themes
 Plug 'powerline/fonts' " powerline fonts for airline
 Plug 'mhinz/vim-startify' " startify
+Plug 'vimsence/vimsence' " discord rich presense
 call plug#end()
 
 " fzf(fuzzy finder) TODO: Polish fzf!
@@ -108,6 +109,12 @@ let g:airline_symbols.dirty='⚡'
 " add tabline to top of screen
 let g:airline#extensions#tabline#enabled = 1
 
+" vimsence(discord rich presense)
+" -------------------
+let g:vimsence_editing_details = 'Messing with: {}'
+let g:vimsence_editing_state = '{}'
+let g:vimsence_file_explorer_details = 'Looking for a file, where tf is it!??!?'
+let g:vimsence_file_explorer_text = 'In fzf'
 " startify 
 " -------------------
 " custom header
