@@ -1,2 +1,0 @@
-# For live wallpapers(.mp4) git uses git-lfs to track files
-*.mp4 filter=lfs diff=lfs merge=lfs -text
