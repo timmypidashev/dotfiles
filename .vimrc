@@ -1,3 +1,28 @@
+" Vim defaults
+" -------------------
+" line numbers
+set number
+
+" syntax highlighting
+syntax on
+
+" tabs set to 4 spaces
+set tabstop=4
+
+" automatically indent
+set autoindent
+
+" ensure tabs are consistent throughout all configurations
+" (incase wierd people with 5 space tabs use this lol)
+set expandtab
+
+" make sure backspacing tabs is also consistent
+" and doesnt just get rid of 1 space
+set softtabstop=4
+
+" Remove default vim bar
+set noshowmode
+
 " vim plug
 " ------------------
 " Install vim-plug if not found
@@ -23,31 +48,6 @@ Plug 'vim-airline/vim-airline-themes' " airline themes
 Plug 'powerline/fonts' " powerline fonts for airline
 Plug 'mhinz/vim-startify' " startify
 call plug#end()
-
-" Vim defaults
-" -------------------
-" line numbers
-set number
-
-" syntax highlighting
-syntax on
-
-" tabs set to 4 spaces
-set tabstop=4
-
-" automatically indent
-set autoindent
-
-" ensure tabs are consistent throughout all configurations
-" (incase wierd people with 5 space tabs use this lol)
-set expandtab
-
-" make sure backspacing tabs is also consistent
-" and doesnt just get rid of 1 space
-set softtabstop=4
-
-" Remove default vim bar
-set noshowmode
 
 " fzf(fuzzy finder) TODO: Polish fzf!
 " ----------------------
