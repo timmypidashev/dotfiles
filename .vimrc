@@ -82,6 +82,9 @@ let g:gitgutter_max_signs = -1
 
 " airline
 " ----------------------
+" set theme
+let g:airline_theme='supernova'
+
 " remove default symbols
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
