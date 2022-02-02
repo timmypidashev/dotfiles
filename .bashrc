@@ -17,3 +17,6 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
+
+# customize the bash prompt
+PS1="\e[0;32m[\w\$ ]\$ \e[0m"
