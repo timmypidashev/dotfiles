@@ -38,6 +38,11 @@ set softtabstop=4
 " Remove default vim bar
 set noshowmode
 
+" close any delimiters
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+
 " tab keybinds
 nmap <silent> <C-n> :tabnext<CR>
 nmap <silent> <C-p> :tabprev<CR>
