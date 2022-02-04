@@ -51,6 +51,7 @@ call plug#begin()
     Plug 'https://github.com/kyazdani42/nvim-tree.lua' " file tree
     Plug 'https://github.com/nvim-lua/plenary.nvim' " async lua module(required for gitsigns)
     Plug 'https://github.com/lewis6991/gitsigns.nvim' " gitsigns = better gitgutter
+    Plug 'github/copilot.vim' " github copilot
 call plug#end()
 
 " ---------------
