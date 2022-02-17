@@ -6,7 +6,6 @@ set mouse=a                       " Enable mouse support.
 set number                        " Show line numbers.
 set clipboard=unnamedplus         " Use system clipboard.
 set ignorecase                    " Case insensitive search.
-set showmatch                     " Highlight matching brackets.
 set laststatus=1                  " Show status line.
 
 " Install vim-plug if not found
@@ -23,6 +22,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " Plugins
 call plug#begin()
     Plug 'https://github.com/wakatime/vim-wakatime' " wakatime plugin
-    Plug 'https://github.com/andweeb/presence.nvim' " discord rich presense
-    Plug 'https://github.com/github/copilot.vim' " github copilot
+    Plug 'https://github.com/morhetz/gruvbox' " gruvbox colorscheme
 call plug#end()
+
+" Set colorscheme
+colorscheme gruvbox
