@@ -29,4 +29,4 @@ call plug#end()
 
 " Set colorscheme
 colorscheme gruvbox
-autocmd VimEnter * hi Normal ctermbg=none
+hi Normal ctermbg=none
