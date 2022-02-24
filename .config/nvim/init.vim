@@ -21,9 +21,12 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " Plugins
 call plug#begin()
-    Plug 'https://github.com/wakatime/vim-wakatime' " wakatime plugin
-    Plug 'https://github.com/morhetz/gruvbox' " gruvbox colorscheme
+    Plug 'https://github.com/wakatime/vim-wakatime' " wakatime
+    Plug 'https://github.com/morhetz/gruvbox' " gruvbox
+    Plug 'https://github.com/vimwiki/vimwiki' " vimwiki
+    Plug 'https://github.com/junegunn/goyo.vim' " goyo
 call plug#end()
 
 " Set colorscheme
 colorscheme gruvbox
+autocmd VimEnter * hi Normal ctermbg=none
