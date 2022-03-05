@@ -21,6 +21,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " Plugins
 call plug#begin()
+    Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'} " coc
     Plug 'https://github.com/wakatime/vim-wakatime' " wakatime
     Plug 'https://github.com/morhetz/gruvbox' " gruvbox
     Plug 'https://github.com/vimwiki/vimwiki' " vimwiki
