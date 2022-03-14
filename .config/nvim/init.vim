@@ -31,6 +31,7 @@ call plug#begin()
     Plug 'https://github.com/junegunn/goyo.vim' " goyo
     Plug 'https://github.com/mhinz/vim-startify' " startify
     Plug 'https://github.com/tpope/vim-fugitive' " fugitive
+    Plug 'https://github.com/michal-h21/vimwiki-sync' " vimwiki-sync
 call plug#end()
 
 " Set colorscheme
@@ -60,4 +61,8 @@ let g:startify_lists = [
 
 let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'w': '~/.vimwiki/index.wiki'} ]
 
+" vimwiki-sync configuration
+let g:vimwiki_list = [{'path':'$HOME/.vimwiki'}]
+let g:vimwiki_sync_branch = "main"
+let g:vimwiki_sync_commit_message = %c'
 
