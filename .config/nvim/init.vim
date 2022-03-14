@@ -2,11 +2,14 @@ set tabstop=4                     " The width of a TAB is set to 4.
 set shiftwidth=4                  " Indents will have a width of 4.
 set softtabstop=4                 " Sets the number of columns for a TAB.
 set expandtab                     " Expand TABs to spaces.
-set mouse=a                       " Enable mouse support.
+set mouse=a                       " Enable mouse support 
 set number                        " Show line numbers.
 set clipboard=unnamedplus         " Use system clipboard.
 set ignorecase                    " Case insensitive search.
 set laststatus=1                  " Show status line.
+
+" paste bind
+map <C-V> "+gP
 
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -26,6 +29,8 @@ call plug#begin()
     Plug 'https://github.com/morhetz/gruvbox' " gruvbox
     Plug 'https://github.com/vimwiki/vimwiki' " vimwiki
     Plug 'https://github.com/junegunn/goyo.vim' " goyo
+    Plug 'https://github.com/mhinz/vim-startify' " startify
+    Plug 'https://github.com/tpope/vim-fugitive' " fugitive
 call plug#end()
 
 " Set colorscheme
@@ -40,3 +45,19 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Neovide configuration
+let g:neovide_fullscreen=v:true
+
+" startify configuration
+let g:startify_custom_header =
+    \ startify#pad(split(system('figlet -w 80 NeoVim'), '\n'))
+
+let g:startify_lists = [
+    \ { 'type': 'bookmarks', 'header': ['    Bookmarks']    },
+    \ { 'type': 'files',     'header': ['    MRU']          },
+    \ ]
+
+let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'w': '~/vimwiki/index.wiki'} ]
+
+
