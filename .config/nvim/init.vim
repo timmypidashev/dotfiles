@@ -64,5 +64,5 @@ let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'w': '~/.vimwiki
 " vimwiki-sync configuration
 let g:vimwiki_list = [{'path':'$HOME/.vimwiki'}]
 let g:vimwiki_sync_branch = "main"
-let g:vimwiki_sync_commit_message = %c'
+let g:vimwiki_sync_commit_message = '%c'
 
