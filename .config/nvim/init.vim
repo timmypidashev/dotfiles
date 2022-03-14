@@ -58,6 +58,6 @@ let g:startify_lists = [
     \ { 'type': 'files',     'header': ['    MRU']          },
     \ ]
 
-let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'w': '~/vimwiki/index.wiki'} ]
+let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'w': '~/.vimwiki/index.wiki'} ]
 
 
