@@ -49,6 +49,7 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " Neovide configuration
 let g:neovide_fullscreen=v:true
+let g:neovide_cursor_antialiasing=v:true
 
 " startify configuration
 let g:startify_custom_header =
