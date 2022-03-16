@@ -32,6 +32,7 @@ call plug#begin()
     Plug 'https://github.com/mhinz/vim-startify' " startify
     Plug 'https://github.com/tpope/vim-fugitive' " fugitive
     Plug 'https://github.com/michal-h21/vimwiki-sync' " vimwiki-sync
+        Plug 'https://github.com/preservim/nerdtree' " nerdtree
 call plug#end()
 
 " Set colorscheme
@@ -66,4 +67,16 @@ let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'w': '~/.vimwiki
 let g:vimwiki_list = [{'path':'$HOME/.vimwiki'}]
 let g:vimwiki_sync_branch = "main"
 let g:vimwiki_sync_commit_message = '%c'
+
+" nerdtree configuration
+nnoremap <C-n> :NERDTreeFocus<CR>
+
+" Remove help info from nertree
+let NERDTreeMinimalUI=1
+
+" Set to current dir
+let NERDTreeChDirMode=2
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
 
