@@ -1,0 +1,6 @@
+[submodule "urxvt-font-size"]
+	path = urxvt-font-size
+	url = https://github.com/majutsushi/urxvt-font-size
+[submodule "urxvt-extensions"]
+	path = urxvt-extensions
+	url = https://github.com/goncalor/urxvt-extensions
