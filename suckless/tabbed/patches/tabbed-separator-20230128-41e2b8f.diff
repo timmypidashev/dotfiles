@@ -1,0 +1,48 @@
+From 52368fd4c9b757dc48cfb3662d87c7dc2fe6d1b9 Mon Sep 17 00:00:00 2001
+From: Casey Fitzpatrick <kcghost@gmail.com>
+Date: Fri, 13 Jan 2023 17:31:08 -0500
+Subject: [PATCH] Add configurable separator bar
+
+---
+ config.def.h |  1 +
+ tabbed.c     | 10 ++++++++--
+ 2 files changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 51bb13d..6936f95 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -14,6 +14,7 @@ static const char titletrim[]   = "...";
+ static const int  tabwidth      = 200;
+ static const Bool foreground    = True;
+ static       Bool urgentswitch  = False;
++static const int  separator     = 4;
+ 
+ /*
+  * Where to place a new tab when it is opened. When npisrelative is True,
+diff --git a/tabbed.c b/tabbed.c
+index eafe28a..1c38725 100644
+--- a/tabbed.c
++++ b/tabbed.c
+@@ -381,10 +381,16 @@ drawtext(const char *text, XftColor col[ColLast])
+ 	int i, j, x, y, h, len, olen;
+ 	char buf[256];
+ 	XftDraw *d;
+-	XRectangle r = { dc.x, dc.y, dc.w, dc.h };
++	XRectangle tab = { dc.x+separator, dc.y, dc.w-separator, dc.h };
++	XRectangle sep = { dc.x, dc.y, separator, dc.h };
+ 
++	if (separator) {
++		XSetForeground(dpy, dc.gc, col[ColFG].pixel);
++		XFillRectangles(dpy, dc.drawable, dc.gc, &sep, 1);
++	}
+ 	XSetForeground(dpy, dc.gc, col[ColBG].pixel);
+-	XFillRectangles(dpy, dc.drawable, dc.gc, &r, 1);
++	XFillRectangles(dpy, dc.drawable, dc.gc, &tab, 1);
++
+ 	if (!text)
+ 		return;
+ 
+-- 
+2.25.1
+
