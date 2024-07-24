@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# Refresh dwmbar
-# Right now, this is done by killing the sleep cmd in the bar script.
-
-kill "$(pstree -lp | grep -- -dwmbar\([0-9] | sed "s/.*sleep(\([0-9]\+\)).*/\1/")"

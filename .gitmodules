@@ -4,3 +4,12 @@
 [submodule "urxvt-extensions"]
 	path = urxvt-extensions
 	url = https://github.com/goncalor/urxvt-extensions
+[submodule "st"]
+	path = st
+	url = https://github.com/timmypidashev/st
+[submodule "dwl"]
+	path = dwl
+	url = https://github.com/timmypidashev/dwl
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/timmypidashev/nvim
